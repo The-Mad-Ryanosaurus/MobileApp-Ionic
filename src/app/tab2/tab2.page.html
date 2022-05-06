@@ -1,5 +1,5 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar color = "warning">
     <ion-title>
       Poké Torch
     </ion-title>
@@ -13,7 +13,14 @@
     <ion-card-header>
       <ion-card-subtitle>Going out to catch them all? Make sure you can be seen with our Poké Torch!
       </ion-card-subtitle>
+      <ion-button expands="full" color="warning" (click)="onFlashlight()">
+        Turn on
+      </ion-button>
+      <ion-button expands="full" color="dark" (click)="offFlashlight()">
+        Turn off
+      </ion-button>
     </ion-card-header>
   </ion-card>
+
 </div>
 </ion-content>

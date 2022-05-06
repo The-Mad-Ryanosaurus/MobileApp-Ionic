@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Flashlight } from '@ionic-native/flashlight/ngx';
 
 @Component({
   selector: 'app-tab2',
@@ -6,7 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
-  constructor() {}
-
+  isTorch = false;
+  
+  constructor(private flashlight: Flashlight) {}
+  onFlashlight(){
+    if(this.flashlight.available()){
+      this.isTorch = false;
+      this.flashlight.switchOn();
+    }else{
+      alert("Flashlight Not Available");
+    }
+  }
+  offFlashlight(){
+    this.isTorch = true;
+    this.flashlight.switchOff();
+  }
 }

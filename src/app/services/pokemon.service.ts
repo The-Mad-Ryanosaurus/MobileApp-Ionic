@@ -51,7 +51,10 @@ export class PokemonService {
         poke['images'] = sprites
         .map(spriteKey => poke['sprites'][spriteKey])
         //.filter should filter the sprites to not display ones in the array declared as NULL but unfortunately it no longer works in this version of Ionic
-        .filter(img=>img);
+        .filter(img => {
+          console.log(img);
+          return img != null && typeof img === 'string' 
+        });
         return poke;
       })
     );

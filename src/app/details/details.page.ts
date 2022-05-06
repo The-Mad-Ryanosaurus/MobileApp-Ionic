@@ -26,7 +26,7 @@ export class DetailsPage implements OnInit {
   ngOnInit() {
     let index = this.route.snapshot.paramMap.get('index');
     this.pokeService.getPokeDetails(index).subscribe(details => {
-      console.log('Details: ', details);
+      // console.log('Details: ', details);
       this.details = details;
     })
   }
