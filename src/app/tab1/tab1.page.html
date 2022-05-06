@@ -1,17 +1,30 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color = "danger">
     <ion-title>
-      Tab 1
+      Welcome
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class = "container">
+  <ion-card>
+    <img src = "https://logos-world.net/wp-content/uploads/2020/05/Pokemon-Symbol.jpg"/>
+    <ion-card-header>
+      <ion-card-title> WELCOME TO THE ULTIMATE POKÉMON GUIDE!
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Click the link below to access the Pokémon Database!</ion-card-title>
+        
+        <ion-button (click) = "openPokeData()" size = "large" expands = "full">Pokémon Database</ion-button>
+      </ion-card-header>
+    </ion-card>
+   
+  </ion-card>
+</div>
 </ion-content>
