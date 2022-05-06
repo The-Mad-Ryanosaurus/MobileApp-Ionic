@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators'
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -45,11 +46,12 @@ export class PokemonService {
   //Gets the full details on individual pokemon
   getPokeDetails(index){
     return this.http.get(`${this.baseUrl}/pokemon/${index}`).pipe(
-      map(poke =>{
+      map(poke => {
         let sprites = Object.keys(poke['sprites']);
         poke['images'] = sprites
-        .map(spriteKey => poke ['sprites'] [spriteKey])
-        .filter(img => img);
+        .map(spriteKey => poke['sprites'][spriteKey])
+        //.filter should filter the sprites to not display ones in the array declared as NULL but unfortunately it no longer works in this version of Ionic
+        .filter(img=>img);
         return poke;
       })
     );
