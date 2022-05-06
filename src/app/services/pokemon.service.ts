@@ -37,7 +37,7 @@ export class PokemonService {
     return this.http.get(`${this.baseUrl}/pokemon/${search}`).pipe(
       map(pokemon => {
         pokemon['image'] = this.getPokeImage(pokemon['id']);
-        pokemon['pokeIndex'] = pokemon['id'];
+        pokemon['pokeIndex'] = pokemon['name'];
         return pokemon;
       })
     );
